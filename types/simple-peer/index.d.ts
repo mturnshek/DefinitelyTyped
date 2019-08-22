@@ -59,6 +59,11 @@ declare namespace SimplePeer {
         // https://nodejs.org/api/stream.html#stream_readable_destroy_error
         destroy(error?: Error): void;
 
+        addStream: (stream: MediaStream) => void;
+        removeStream: (stream: MediaStream) => void;
+        addTrack: (track: MediaStreamTrack, stream: MediaStream) => void;
+        removeTrack: (track: MediaStreamTrack, stream: MediaStream) => void;
+
         // methods which are not documented
         readonly bufferSize: number;
         address(): { port: string, family: string, address: string, };
